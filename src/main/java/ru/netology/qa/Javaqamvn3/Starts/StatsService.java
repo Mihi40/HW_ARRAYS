@@ -8,55 +8,50 @@ public class StatsService {
         }
         return sum;
     }
+
     public int SalesAvg(int[] months) {
-        int sum = 0;
-        int sumAvg;
-        for (int i = 0; i < months.length; i++) {
-            sum = sum + months[i];
-        }
-        sumAvg = sum / months.length;
-        return sumAvg;
+        return SalesAmount(months) / months.length;
     }
+
     public int maxSales(int[] sales) {
-        int maxMonth = 0;
-
+        int maxmonth = 0;
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] >= sales[maxMonth]) {
-                maxMonth = i;
+            if (sales[i] >= sales[maxmonth]) {
+                maxmonth = i;
             }
         }
-        return maxMonth+1;
-    }
-    public int minSales(int [] sales) {
-        int minMonth = 0;
-        for (int i = 0; i < sales.length; i++) {
-            if (sales[i] <= sales[minMonth]) {
-                minMonth = i;
-            }
-        }
-        return minMonth + 1;
+        return maxmonth + 1;
     }
 
-    public int SalesBelowAver(int [] sales) {
-        StatsService StatsService = new StatsService();
-        int actualSumAvg = StatsService.SalesAvg(sales);
-        int countMonth = 0;
+    public int minSales(int[] sales) {
+        int minmonth = 0;
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < actualSumAvg) {
-                countMonth += 1;
+            if (sales[i] <= sales[minmonth]) {
+                minmonth = i;
             }
         }
-        return countMonth;
+        return minmonth + 1;
     }
-    public int SalesAboveAver(int [] sales) {
-        StatsService StatsService = new StatsService();
-        int actualSumAvg = StatsService.SalesAvg(sales);
-        int countMonth = 0;
+
+    public int SalesBelowAver(int[] sales) {
+        int actualsumavg = SalesAvg(sales);
+        int countmonth = 0;
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] > actualSumAvg) {
-                countMonth += 1;
+            if (sales[i] < actualsumavg) {
+                countmonth += 1;
             }
         }
-        return countMonth;
+        return countmonth;
+    }
+
+    public int SalesAboveAver(int[] sales) {
+        int actualsumavg = SalesAvg(sales);
+        int countmonth = 0;
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] > actualsumavg) {
+                countmonth += 1;
+            }
+        }
+        return countmonth;
     }
 }
