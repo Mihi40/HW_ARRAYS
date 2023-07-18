@@ -9,9 +9,9 @@ public class StatsServiceTest {
         StatsService StatsService = new StatsService();
         int[] arr = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         //сумма всех продаж
-        int expectedsum = 180;
-        int actualsum = StatsService.SalesAmount(arr);
-        Assertions.assertEquals(expectedsum, actualsum);
+        int expectedSum = 180;
+        int actualSum = StatsService.salesAmount(arr);
+        Assertions.assertEquals(expectedSum, actualSum);
     }
 
     @Test
@@ -19,9 +19,9 @@ public class StatsServiceTest {
         StatsService StatsService = new StatsService();
         int[] arr = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         //средняя сумма всех продаж в месяц
-        int expectedsumavg = 15;
-        int actualsumavg = StatsService.SalesAvg(arr);
-        Assertions.assertEquals(expectedsumavg, actualsumavg);
+        int expectedSumAvg = 15;
+        int actualSumAvg = StatsService.salesAvg(arr);
+        Assertions.assertEquals(expectedSumAvg, actualSumAvg);
     }
 
     @Test
@@ -29,9 +29,9 @@ public class StatsServiceTest {
         StatsService StatsService = new StatsService();
         int[] arr = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         //номер месяца, в котором был пик продаж, то есть осуществлены продажи на максимальную сумму
-        int expectedmaxmonths = 8;
-        int actualmaxmonths = StatsService.maxSales(arr);
-        Assertions.assertEquals(expectedmaxmonths, actualmaxmonths);
+        int expectedMaxMonths = 8;
+        int actualMaxMonths = StatsService.maxSales(arr);
+        Assertions.assertEquals(expectedMaxMonths, actualMaxMonths);
     }
 
     @Test
@@ -39,9 +39,9 @@ public class StatsServiceTest {
         StatsService StatsService = new StatsService();
         int[] arr = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         //номер месяца, в котором был минимум продаж, то есть осуществлены продажи на минимальную сумму
-        int expectedminsales = 9;
-        int actualminsales = StatsService.minSales(arr);
-        Assertions.assertEquals(expectedminsales, actualminsales);
+        int expectedMinSales = 9;
+        int actualMinSales = StatsService.minSales(arr);
+        Assertions.assertEquals(expectedMinSales, actualMinSales);
     }
 
     @Test
@@ -49,9 +49,9 @@ public class StatsServiceTest {
         StatsService StatsService = new StatsService();
         int[] arr = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         //количество месяцев, в которых продажи были ниже среднего
-        int expectedsalesbelowAver = 5;
-        int actualsalesbelowaver = StatsService.SalesBelowAver(arr);
-        Assertions.assertEquals(expectedsalesbelowAver, actualsalesbelowaver);
+        int expectedSalesBelowAver = 5;
+        int actualSalesBelowAver = StatsService.salesBelowAver(arr);
+        Assertions.assertEquals(expectedSalesBelowAver, actualSalesBelowAver);
     }
 
     @Test
@@ -59,8 +59,8 @@ public class StatsServiceTest {
         StatsService StatsService = new StatsService();
         int[] arr = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         //количество месяцев, в которых продажи были выше среднего
-        int expectedsalesaboveaver = 5;
-        int actualsalesaboveaver = StatsService.SalesAboveAver(arr);
-        Assertions.assertEquals(expectedsalesaboveaver, actualsalesaboveaver);
+        int expectedSalesAboveAver = 5;
+        int actualSalesAboveAver = StatsService.salesAboveAver(arr);
+        Assertions.assertEquals(expectedSalesAboveAver, actualSalesAboveAver);
     }
 }

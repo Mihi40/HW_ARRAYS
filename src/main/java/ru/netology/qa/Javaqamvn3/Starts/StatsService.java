@@ -1,7 +1,7 @@
 package ru.netology.qa.Javaqamvn3.Starts;
 
 public class StatsService {
-    public int SalesAmount(int[] months) {
+    public int salesAmount(int[] months) {
         int sum = 0;
         for (int i = 0; i < months.length; i++) {
             sum = sum + months[i];
@@ -9,49 +9,49 @@ public class StatsService {
         return sum;
     }
 
-    public int SalesAvg(int[] months) {
-        return SalesAmount(months) / months.length;
+    public int salesAvg(int[] months) {
+        return salesAmount(months) / months.length;
     }
 
     public int maxSales(int[] sales) {
-        int maxmonth = 0;
+        int maxMonth = 0;
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] >= sales[maxmonth]) {
-                maxmonth = i;
+            if (sales[i] >= sales[maxMonth]) {
+                maxMonth = i;
             }
         }
-        return maxmonth + 1;
+        return maxMonth + 1;
     }
 
     public int minSales(int[] sales) {
-        int minmonth = 0;
+        int minMonth = 0;
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] <= sales[minmonth]) {
-                minmonth = i;
+            if (sales[i] <= sales[minMonth]) {
+                minMonth = i;
             }
         }
-        return minmonth + 1;
+        return minMonth + 1;
     }
 
-    public int SalesBelowAver(int[] sales) {
-        int actualsumavg = SalesAvg(sales);
-        int countmonth = 0;
+    public int salesBelowAver(int[] sales) {
+        int actualSumAvg = salesAvg(sales);
+        int countMonth = 0;
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < actualsumavg) {
-                countmonth += 1;
+            if (sales[i] < actualSumAvg) {
+                countMonth += 1;
             }
         }
-        return countmonth;
+        return countMonth;
     }
 
-    public int SalesAboveAver(int[] sales) {
-        int actualsumavg = SalesAvg(sales);
-        int countmonth = 0;
+    public int salesAboveAver(int[] sales) {
+        int actualSumAvg = salesAvg(sales);
+        int countMonth = 0;
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] > actualsumavg) {
-                countmonth += 1;
+            if (sales[i] > actualSumAvg) {
+                countMonth += 1;
             }
         }
-        return countmonth;
+        return countMonth;
     }
 }
